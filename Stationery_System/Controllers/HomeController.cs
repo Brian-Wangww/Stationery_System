@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Stationery_System.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,10 @@ namespace Stationery_System.Controllers
     {
         public ActionResult Index()
         {
+            using(var db = new StationeryDbContext())
+            {
+                db.Database.Initialize(force: true);
+            }
             return View();
         }
 

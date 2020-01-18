@@ -13,7 +13,9 @@ namespace Stationery_System.Models
         public string DepartmentName { get; set; }
         public string DepartmentCode { get; set; }
         public string CollectionPoint { get; set; }
+        [ForeignKey("DepEmployees")]
         public int RepresentativeId { get; set; }
+        [ForeignKey("DepEmployees")]
         public int ContactPersonId { get; set; }
         public virtual ICollection<DepEmployee> DepEmployees { get; set; }
     }
